@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Doki World!");
+        int x = 15;
+        x =  x % 10;
+
+        Console.WriteLine($"Hello Doki World! {x}");
     }
 }
