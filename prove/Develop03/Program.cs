@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        /*List<Scripture> scriptures = GetScriptureList("ScriptureList.csv");*/
         Scripture scripture = GetScripture("ScriptureList.csv");
         Memorizer memorizer = new Memorizer(scripture);
         bool menuLoop;
@@ -61,7 +62,6 @@ class Program
         string line;
         file.ReadLine();
         line = file.ReadLine();
-        /*List<Scripture> scriptures = new List<Scripture>();*/
 
         string[] row = line.Split(separator);
         string name = row[0];
@@ -69,7 +69,6 @@ class Program
         string verseStart = (row[2]);
         string verseEnd = (row[3]);
         string filename = (row[4]);
-        Console.WriteLine(filename);
 
         System.IO.StreamReader verseFile = new System.IO.StreamReader(filename);
         List<string> verses = System.IO.File.ReadAllLines(filename).ToList<string>();
@@ -78,5 +77,68 @@ class Program
 
         return scripture;
     }
+
+    /*static List<Scripture> GetScriptureList(string filePath)
+    {
+        List<Scripture> scriptures = new List<Scripture>();
+
+        System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+        string lines;
+        file.ReadLine();
+
+        while ((lines = file.ReadLine()) != null)
+        {
+            List<string> linesArray = lines.Split(',').ToList();
+
+            foreach (string column in linesArray) 
+            {
+                string name = column[0].ToString();
+                string chapter = column[1].ToString();
+                string verseStart = column[2].ToString();
+                string verseEnd = column[3].ToString();
+                string filename = column[4].ToString();
+
+                System.IO.StreamReader verseFile = new System.IO.StreamReader(filename);
+                List<string> verses = System.IO.File.ReadAllLines(filename).ToList<string>();
+                Scripture scripture = new Scripture(name, chapter, verseStart, verseEnd, verses);
+
+                scriptures.Add(scripture);
+            }  
+        }*/
+
+
+        /*string[] lines = System.IO.File.ReadAllLines(filePath);
+        foreach(string line in lines)
+        {
+            string[] columns = line.Split(',');
+            foreach (string column in columns) 
+            {
+                string name = column[0].ToString();
+                string chapter = column[1].ToString();
+                string verseStart = column[2].ToString();
+                string verseEnd = column[3].ToString();
+                string filename = column[4].ToString();
+
+                System.IO.StreamReader verseFile = new System.IO.StreamReader(filename);
+                List<string> verses = System.IO.File.ReadAllLines(filename).ToList<string>();
+                Scripture scripture = new Scripture(name, chapter, verseStart, verseEnd, verses);
+
+                scriptures.Add(scripture);
+            }
+        }
+
+        return scriptures;
+
+    }*/
+
+    /*static Scripture PickRandomScripture(List<Scripture> scriptures)
+    {
+        Random random = new Random();
+        int randomIndex = random.Next(0, scriptures.Count());
+
+        Scripture scripture = scriptures[randomIndex];
+
+        return scripture;
+    }*/
         
 }
