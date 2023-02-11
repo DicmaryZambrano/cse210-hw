@@ -4,18 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        // instance of an actual object
-        Book book1 = new Book("Harry Potter","JK Rowlning", 400);
+        /*
+            https://parzibyte.me/blog
+            */
+        string ubicacionArchivo = @"C:\Users\dicma\OneDrive\Documents\byui\cse210\cse210-hw\prove\Develop03\ScriptureList.csv";
+        System.IO.StreamReader archivo = new System.IO.StreamReader(ubicacionArchivo);
+        string separador = ",";
+        string linea;
+        // Si el archivo no tiene encabezado, elimina la siguiente línea
+        archivo.ReadLine(); // Leer la primera línea pero descartarla porque es el encabezado
 
-        Book book2 = new Book("Monstand","Genshin", 100);
-
-        Console.WriteLine($"{book1.title},{book1.author},{book1.pages}");
-        
-        Console.WriteLine($"{book2.title},{book2.author},{book2.pages}");
-
-        Console.WriteLine(book1.HasHonors());
-        Console.WriteLine(book2.HasHonors());
-
-        Console.WriteLine($"Hello Doki World!");
+        while ((linea = archivo.ReadLine()) != null)
+        {
+            string[] fila = linea.Split(separador);
+            string descripcion = fila[0];
+            double precio = Convert.ToDouble(fila[1]);
+            double existencia = Convert.ToDouble(fila[2]);
+            Console.WriteLine("Producto {0} con precio {1} y existencia {2}", descripcion, precio, existencia);
+        }
     }
 }
