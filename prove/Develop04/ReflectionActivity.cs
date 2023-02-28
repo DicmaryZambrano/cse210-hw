@@ -28,7 +28,7 @@ namespace Develop04
 
             DateTime datetime = DateTime.Now;
 
-            while(TimeLeft(datetime, GetDuration()))
+            while(TimeLeft(datetime, _duration))
             {
                 Console.WriteLine("+ _ - * - Carefully read the following prompt, press enter to continue - * - _ +");
 

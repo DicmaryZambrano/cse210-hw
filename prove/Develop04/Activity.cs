@@ -5,7 +5,7 @@ namespace Develop04
     public class Activity {
         private string _name;
         private string _description;
-        private int _duration;
+        protected int _duration;
 
         public Activity(string name, string description, int duration)
         {
@@ -29,10 +29,6 @@ namespace Develop04
             _duration = duration;
         }
 
-        public int GetDuration()
-        {
-            return _duration;
-        } 
 
         public void Sleep(int sleepTime)
         {

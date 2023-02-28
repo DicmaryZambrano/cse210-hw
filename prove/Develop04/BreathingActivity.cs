@@ -37,7 +37,7 @@ namespace Develop04
 
         DateTime datetime = DateTime.Now;
 
-        while(TimeLeft(datetime, GetDuration()))
+        while(TimeLeft(datetime, _duration))
         {
             breatheSequence("Breathe In");
             
