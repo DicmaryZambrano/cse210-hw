@@ -5,9 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> ReflectionQuestions = GetList(@"C:\Users\dicma\OneDrive\Documents\byui\cse210\cse210-hw\prove\Develop04\ReflectionQuestions.csv");
-        List<string> ReflectionsPrompts = GetList(@"C:\Users\dicma\OneDrive\Documents\byui\cse210\cse210-hw\prove\Develop04\ReflectionPrompts.csv");
-        List<string> ListingQuestions = GetList(@"C:\Users\dicma\OneDrive\Documents\byui\cse210\cse210-hw\prove\Develop04\ReflectionPrompts.csv");
+        List<string> ReflectionQuestions = GetList("ReflectionQuestions.csv");
+        List<string> ReflectionsPrompts = GetList("ReflectionPrompts.csv");
+        List<string> ListingQuestions = GetList("ReflectionPrompts.csv");
 
         BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
         ReflectionActivity reflectionActivity = new ReflectionActivity(ReflectionsPrompts, ReflectionQuestions, "Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
