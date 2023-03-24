@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         /*
-            https://parzibyte.me/blog
+            https://parzibyte.me/blogsda
             */
         string ubicacionArchivo = @"C:\Users\dicma\OneDrive\Documents\byui\cse210\cse210-hw\prove\Develop03\ScriptureList.csv";
         System.IO.StreamReader archivo = new System.IO.StreamReader(ubicacionArchivo);
